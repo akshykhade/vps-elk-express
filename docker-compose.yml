@@ -88,7 +88,6 @@ services:
 
 networks:
   elk-network:
-    driver: bridge
 
 volumes:
   pg_data:
