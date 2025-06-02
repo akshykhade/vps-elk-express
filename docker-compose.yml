@@ -73,6 +73,8 @@ services:
       - /sys:/sys:ro
     ports:
       - "8080:8080"
+    networks:
+      - elk-network
 
   postgres:
     image: postgres:latest
@@ -84,7 +86,9 @@ services:
     volumes:
       - pg_data:/var/lib/postgresql/data
     ports:
-      - "5433:5432"
+      - "5432:5432"
+    networks:
+      - elk-network
 
 networks:
   elk-network:
